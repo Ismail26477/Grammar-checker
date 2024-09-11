@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spell & Grammar Checker</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>  
+<body>
+    <div class="container">
+        <div class="navbar">
+            <li><a href="">Grammar</a></li>
+            <li><a href="">Grammar Checker</a></li>
+            <li><a href=""><span class="material-symbols-outlined">person</span></a></li>
+        </div>
+ 
+        <div class="left-sidebar">
+            <li><a href="">Grammar Checker</a></li>
+            <li><a href="">Grammar Checker</li>
+            <li><a href="">Grammar Checker</a></li>
+        </div>
+        <div class="all-text">
+            <div class="input-text">
+                <!-- Toolbar -->
+                <div class="toolbar">
+                    <p value="en-US">English (US)</p>
+                    <div class="toolbar-buttons">
+                        <button class="toolbar-btn bold-btn">B</button>
+                        <button class="toolbar-btn italic-btn">I</button>
+                        <button class="toolbar-btn underline-btn">U</button>
+                        <!-- Add more buttons as per the toolbar in your image -->
+                    </div>
+                </div>
+                
+                <form id="correction-form">
+                    <textarea id="text-input" name="text" placeholder="Enter your text here..."></textarea>
+                </form>
+            </div>
+            <div class="correct-text">
+                <div class="result-container">
+                    <h2>Corrections</h2>
+                    <p>Enter at least 25 words to see score.</p>
+                    <div class="tabs">
+                        <button class="tab" data-type="all">All (<span id="all-count">0</span>)</button>
+                        <button class="tab" data-type="capitalize">Capitalize (<span id="capitalize-count">0</span>)</button>
+                        <button class="tab" data-type="spell">Spell (<span id="spell-count">0</span>)</button>
+                        <button class="tab" data-type="grammar">Grammar (<span id="grammar-count">0</span>)</button>
+                    </div>
+                    <div id="corrections-list" class="corrections-list"></div>
+                </div>
+                             
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
